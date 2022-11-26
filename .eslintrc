@@ -10,7 +10,9 @@
         "sourceType": "module"
     },
     "rules": {
-        "default-case": 0
+        "default-case": 0,
+        "no-console": "off",
+        "no-unused-vars": "off"
     }
     
   }
