@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/B-Mikhail-V/ajs-homework_5-1.git"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "bugs": {

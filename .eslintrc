@@ -12,7 +12,8 @@
     "rules": {
         "default-case": 0,
         "no-console": "off",
-        "no-unused-vars": "off"
+        "no-unused-vars": "off",
+        "func-names": ["error", "never"]
     }
     
   }

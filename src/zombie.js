@@ -1,10 +1,10 @@
 import Character from './character.js';
 import typesList from './typesList.js';
 
-class Bowman extends Character {
+class Zombie extends Character {
   constructor(name, type, health) {
     super(name, health);
-    this.type = type || 'Bowman';
+    this.type = type || 'Zombie';
     this.validate();
     this.health = typesList[this.type][0].health;
     this.level = typesList[this.type][0].level;
@@ -13,4 +13,4 @@ class Bowman extends Character {
   }
 }
 
-export default Bowman;
+export default Zombie;
