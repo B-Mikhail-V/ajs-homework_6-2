@@ -1,5 +1,5 @@
-import Character from './character.js';
-import typesList from './typesList.js';
+import Character from './character';
+import typesList from './typesList';
 
 class Undead extends Character {
   constructor(name, type, health) {
