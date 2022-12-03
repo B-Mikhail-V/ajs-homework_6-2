@@ -35,8 +35,6 @@ test('validate too shot name', () => {
 });
 
 test('levelUp method change values', () => {
-  // const level = Character.prototype.levelUp = jest.fn();
-
   const result = {
     name: 'persona1',
     type: 'Bowman',
@@ -47,12 +45,10 @@ test('levelUp method change values', () => {
   };
   const character = new Character('persona1', 'Bowman', 50, 1, 10, 10);
   character.levelUp();
-  // jest.spyOn(character, 'levelUp');
-
   expect(character).toEqual(result);
 });
 
-test('levelUp not for zero health hero', () => {
+test('levelUp method not for zero health hero', () => {
   const _ = new Character('p', 'Bowman', 0, 1, 25, 25);
   expect(() => (_.levelUp())).toThrow('Персонаж уже вне игры!');
 });
@@ -64,9 +60,27 @@ test.each([
   [Undead, 'Undead', typesList.Undead[0]],
   [Daemon, 'Daemon', typesList.Daemon[0]],
   [Zombie, 'Zombie', typesList.Zombie[0]],
-])('all child classes, %p', (ClassName, type, typeResult) => {
+])('all child classes, %p', (ClassName, type, persona) => {
   const result = new ClassName('testName');
-  typeResult.name = 'testName';
-  typeResult.type = type;
-  expect(result).toEqual(typeResult);
+  persona.name = 'testName';
+  persona.type = type;
+  expect(result).toEqual(persona);
+});
+
+test.each([
+  [10, 41],
+  [100, 0],
+])('testing damage for points - %i', (points, healthNew) => {
+  const character = new Character('persona1', 'Bowman', 50, 1, 10, 10);
+  character.damage(points);
+  expect(character.health).toEqual(healthNew);
+});
+
+test.each([
+  [0, 'Параметр урона обязателен и должен быть больше нуля!'],
+  [-1, 'Параметр урона обязателен и должен быть больше нуля!'],
+  ['', 'Параметр урона обязателен и должен быть больше нуля!'],
+])('testing damage for not available points - %i', (points, errorMsg) => {
+  const character = new Character('persona1', 'Bowman', 50, 1, 10, 10);
+  expect(() => (character.damage(points))).toThrow(errorMsg);
 });

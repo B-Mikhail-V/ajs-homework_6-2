@@ -5,7 +5,7 @@ export default class Character {
     this.name = name;
     this.type = type;
     this.health = health;
-    this.level = level || 50;
+    this.level = level || 1;
     this.attack = attack || 25;
     this.defence = defence || 10;
   }
@@ -17,11 +17,16 @@ export default class Character {
     this.defence = Math.round(this.defence * 1.2, 0);
     this.health = 100;
   }
+
+  damage(points) {
+    if (points <= 0 || !points) throw new Error('Параметр урона обязателен и должен быть больше нуля!');
+    if (this.health === 0) throw new Error('Урон персонажу уже не нанести - персонаж уже вне игры!');
+    const healthNew = this.health - points * (1 - this.defence / 100);
+    this.health = healthNew >= 0 ? healthNew : 0;
+  }
 }
 
 Character.prototype.validate = function () {
   if (this.name.length < minLen || this.name.length > maxLen) throw new Error('Длина имени должна быть от 2 до 10 символов');
   if (!listPerson.includes(this.type)) throw new Error(`Указан несуществующий тип - ${this.type}`);
 };
-
-console.log(minLen);
