@@ -84,3 +84,8 @@ test.each([
   const character = new Character('persona1', 'Bowman', 50, 1, 10, 10);
   expect(() => (character.damage(points))).toThrow(errorMsg);
 });
+
+test('testing damage for points', () => {
+  const character = new Character('persona1', 'Bowman', 0, 1, 10, 10);
+  expect(() => (character.damage(10))).toThrow('Урон персонажу уже не нанести - персонаж уже вне игры!');
+});
