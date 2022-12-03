@@ -1,7 +1,7 @@
-import Character from './character';
-import typesList from './typesList';
+import Character from './character.js';
+import { typesList } from './typesList.js';
 
-class Undead extends Character {
+export default class Undead extends Character {
   constructor(name, type, health) {
     super(name, health);
     this.type = type || 'Undead';
@@ -12,5 +12,3 @@ class Undead extends Character {
     this.defence = typesList[this.type][0].defence;
   }
 }
-
-export default Undead;

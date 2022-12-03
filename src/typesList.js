@@ -1,4 +1,4 @@
-const typesList = {
+export const typesList = {
   Bowman: [
     {
       health: 100, level: 1, attack: 25, defence: 25,
@@ -30,5 +30,3 @@ const typesList = {
     },
   ],
 };
-
-export default typesList;

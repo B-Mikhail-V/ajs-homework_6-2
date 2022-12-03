@@ -1,5 +1,7 @@
-class Character {
-  constructor(name, type, level, health, attack, defence) {
+import { minLen, maxLen, listPerson } from './limits.js';
+
+export default class Character {
+  constructor(name, type, health, level, attack, defence) {
     this.name = name;
     this.type = type;
     this.health = health;
@@ -18,8 +20,8 @@ class Character {
 }
 
 Character.prototype.validate = function () {
-  if (this.name.length < 2 || this.name.length > 10) throw new Error('Длина имени должна быть от 2 до 10 символов');
-  if (!['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'].includes(this.type)) throw new Error(`Указан несуществующий тип - ${this.type}`);
+  if (this.name.length < minLen || this.name.length > maxLen) throw new Error('Длина имени должна быть от 2 до 10 символов');
+  if (!listPerson.includes(this.type)) throw new Error(`Указан несуществующий тип - ${this.type}`);
 };
 
-export default Character;
+console.log(minLen);

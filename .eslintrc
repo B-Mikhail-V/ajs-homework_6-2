@@ -13,7 +13,14 @@
         "default-case": 0,
         "no-console": "off",
         "no-unused-vars": "off",
-        "func-names": ["error", "never"]
+        "func-names": ["error", "never"],
+        "max-classes-per-file": [
+            "error",
+            { "ignoreExpressions": true, "max": 7 }
+        ],
+        "import/extensions": [0, "js","always" ],
+        "import/prefer-default-export": "off",
+        "no-param-reassign": 0
     }
     
   }

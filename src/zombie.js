@@ -1,7 +1,7 @@
-import Character from './character';
-import typesList from './typesList';
+import Character from './character.js';
+import { typesList } from './typesList.js';
 
-class Zombie extends Character {
+export default class Zombie extends Character {
   constructor(name, type, health) {
     super(name, health);
     this.type = type || 'Zombie';
@@ -12,5 +12,3 @@ class Zombie extends Character {
     this.defence = typesList[this.type][0].defence;
   }
 }
-
-export default Zombie;
