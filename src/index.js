@@ -1,11 +1,25 @@
-import Bowman from './bowman.js';
-import Magician from './magician.js';
-import Swordsman from './swordsman.js';
-import Undead from './undead.js';
-import Daemon from './daemon.js';
-import Zombie from './zombie.js';
+import getAttack from './app.js';
 
-const bow1 = new Bowman('persona1');
-bow1.levelUp();
-bow1.damage(20);
-console.log(bow1);
+const character = {
+  name: 'Лучник',
+  type: 'Bowman',
+  health: 50,
+  level: 3,
+  attack: 40,
+  defence: 10,
+  special: [
+    {
+      id: 8,
+      name: 'Двойной выстрел',
+      icon: 'http://...',
+      description: 'Двойной выстрел наносит двойной урон',
+    },
+    {
+      id: 9,
+      name: 'Нокаутирующий удар',
+      icon: 'http://...',
+    },
+  ],
+};
+
+console.log(getAttack(character));

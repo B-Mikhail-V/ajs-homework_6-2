@@ -1,2 +1,2 @@
-# ajs-homework_5-1
-[![Build status](https://ci.appveyor.com/api/projects/status/t279fbyjwrix16e0?svg=true)](https://ci.appveyor.com/project/B-Mikhail-V/ajs-homework-5-1)
+# ajs-homework_6-2
+[![Build status](https://ci.appveyor.com/api/projects/status/87icq2n8sf28u5fo?svg=true)](https://ci.appveyor.com/project/B-Mikhail-V/ajs-homework-6-2)
